@@ -31,7 +31,7 @@ public interface EventInterface {
   /**
    * Get the main events
    */
-  public void getEventTopTen();
+  public List<EventDTO> getEventTopTen();
 
   /**
    * Get all event near to gps location

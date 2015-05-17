@@ -10,65 +10,59 @@ import co.com.udem.rumboteca.service.location.LocationInterface;
 import co.com.udem.rumboteca.service.location.LocationServicesImpl;
 
 
-/**
- * This class has all methods associated to Rumboteca web site
- * @author Milton
- * @version 1.0
- */
 public class RumbotecaFacade {
 
-  public List<PlaceDTO> getLocationByCity(int idCity) {
-    LocationInterface locationInterface = new LocationServicesImpl();
-    return locationInterface.getLocationByCity(idCity);
-  }
+	EventInterface eventInterface = new EventServicesImpl();
 
-  public void getLocationByState(String idCountry, String idState) {
-  }
+	public List<PlaceDTO> getLocationByCity(int idCity) {
+		LocationInterface locationInterface = new LocationServicesImpl();
+		return locationInterface.getLocationByCity(idCity);
+	}
 
-  public void getLocationByCountry(String idCountry) {
-  }
+	public void getLocationByState(String idCountry, String idState) {
+	}
 
-  public void getLocation(String log, String lat) {
-  }
+	public void getLocationByCountry(String idCountry) {
+	}
 
-  public void getLocationTopTen() {
-  }
+	public void getLocation(String log, String lat) {
+	}
 
-  /**
-   * Get all event associated to city identifier 
-   * @param idCountry
-   * @param idState
-   * @param idCity
-   */
-  public List<EventDTO> getEventByCity(int idCity) {
-    EventInterface event = new EventServicesImpl();
-    return event.getEventByCity(idCity);
-  }
+	public void getLocationTopTen() {
+	}
 
-  public void getEventByState(String idCountry, String idState) {
-  }
+	public List<EventDTO> getEventByCity(int idCity) {
+		return eventInterface.getEventByCity(idCity);
+	}
 
-  public void getEventByCountry(String idCountry) {
-  }
+	public void getEventByState(String idCountry, String idState) {
+	}
 
-  public void getEventTopTen() {
-  }
+	public void getEventByCountry(String idCountry) {
+	}
 
-  public void getEventByLocation(String log, String lat) {
-  }
+	public List<EventDTO> getEventTopTen() {
+		return eventInterface.getEventTopTen();
+	}
 
-  public void getLiquordComboByLocation(String idCountry, String idState, String idCity) {
-  }
+	public void getEventByLocation(String log, String lat) {
+	}
 
-  public void getFoodByComboLocation(String idCountry, String idState, String idCity) {
-  }
+	public void getLiquordComboByLocation(String idCountry, String idState,
+			String idCity) {
+	}
 
-  public void getComboTopTen() {
-  }
+	public void getFoodByComboLocation(String idCountry, String idState,
+			String idCity) {
+	}
 
-  public void getReviewByLocation(String idCountry, String idState, String idCity) {
-  }
+	public void getComboTopTen() {
+	}
 
-  public void getReviewTopTen() {
-  }
+	public void getReviewByLocation(String idCountry, String idState,
+			String idCity) {
+	}
+
+	public void getReviewTopTen() {
+	}
 }

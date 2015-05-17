@@ -32,7 +32,7 @@ public interface EventDAO {
   /**
    * 
    */
-  public void getEventTopTen();
+  public List<Event> getEventTopTen();
 
   /**
    * 

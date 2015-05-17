@@ -176,7 +176,49 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 
   }
 
-  public void getEventTopTen() {
+  public List<Event> getEventTopTen() {
+	// SQL Query
+    String sql = "SELECT distinctrow ev.id, ev.contactId, ev.placeId, ev.tittle, ev.description, ev.photo,"
+	+"(SELECT count(co.id) FROM comment co Join review re ON co.reviewId = re.id Join eventreview er on re.id = er.reviewId "
+	+"where er.eventId = ev.id) As comments FROM event ev JOIN eventreview er ON ev.id = er.eventId "
+	+"JOIN review re ON er.reviewId = re.id JOIN comment co ON re.id = co.reviewId ORDER BY comments desc LIMIT 5";
+
+    List<Event> eventList = new ArrayList<Event>();
+
+    try {
+      conn = dataSource.getConnection();
+      ps = conn.prepareStatement(sql);
+      rs = ps.executeQuery();
+      
+      while (rs.next()) {
+        Event event = new Event();
+        event.setId(rs.getInt("id"));
+        event.setContactId(rs.getInt("contactId"));
+        event.setDescription(rs.getString("description"));
+        event.setPhoto(rs.getString("photo"));
+        event.setTittle(rs.getString("tittle"));
+
+        eventList.add(event);
+      }
+
+      // Close resources
+      rs.close();
+      ps.close();
+      
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    } finally {
+      // Close database connection
+      if (conn != null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+        }
+      }
+    }
+
+    return eventList;
+
   }
 
   public List<EventDTO> getEventByLocation(String log, String lat) {

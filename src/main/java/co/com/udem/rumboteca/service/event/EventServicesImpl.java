@@ -17,16 +17,13 @@ import co.com.udem.rumboteca.persistence.entity.Event;
 public class EventServicesImpl implements EventInterface {
 	
 	 // Get DAO implementation use spring injection 
-    ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Module.xml");
+	ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Module.xml");
+	EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
   public List<EventDTO> getEventByCity(int idCity) {
-    // Definitions
+	  
     List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
-    EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
-    
-    // Service execute
     List<Event> eventList = eventDAO.getEventByCity(idCity);
     
-    // Create event DTO
     for (Event event : eventList) {
       EventDTO eventDTO = new EventDTO();
       eventDTO.setId(""+event.getId());
@@ -42,9 +39,8 @@ public class EventServicesImpl implements EventInterface {
   public List<EventDTO> getEventByState(int idState) {
   
     List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
-    EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
-    
     List<Event> eventList = eventDAO.getEventByCity(idState);
+    
     for (Event event : eventList) {
       EventDTO eventDTO = new EventDTO();
       eventDTO.setId(""+event.getId());
@@ -60,9 +56,8 @@ public class EventServicesImpl implements EventInterface {
   public List<EventDTO> getEventByCountry(int idCountry) {
 
     List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
-    EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
-    
     List<Event> eventList = eventDAO.getEventByCity(idCountry);
+    
     for (Event event : eventList) {
       EventDTO eventDTO = new EventDTO();
       eventDTO.setId(""+event.getId());
@@ -75,7 +70,21 @@ public class EventServicesImpl implements EventInterface {
     return eventDTOList;
   }
 
-  public void getEventTopTen() {
+  public List<EventDTO> getEventTopTen() {
+
+    List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
+    List<Event> eventList = eventDAO.getEventTopTen();
+    
+    for (Event event : eventList) {
+      EventDTO eventDTO = new EventDTO();
+      eventDTO.setId(""+event.getId());
+      eventDTO.setDescription(event.getDescription());
+      eventDTO.setPhoto(event.getPhoto());
+      eventDTO.setTittle(event.getTittle());
+      eventDTOList.add(eventDTO);
+    }    
+    
+    return eventDTOList;
   }
 
   public List<EventDTO> getEventByLocation(String log, String lat) {
