@@ -1,18 +1,28 @@
 package co.com.udem.rumboteca.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import co.com.udem.rumboteca.model.CityDTO;
+import co.com.udem.rumboteca.model.CountryDTO;
 import co.com.udem.rumboteca.model.EventDTO;
 import co.com.udem.rumboteca.model.PlaceDTO;
+import co.com.udem.rumboteca.model.StateDTO;
+import co.com.udem.rumboteca.persistence.entity.City;
+import co.com.udem.rumboteca.persistence.entity.Country;
+import co.com.udem.rumboteca.persistence.entity.States;
 import co.com.udem.rumboteca.service.event.EventInterface;
 import co.com.udem.rumboteca.service.event.EventServicesImpl;
 import co.com.udem.rumboteca.service.location.LocationInterface;
 import co.com.udem.rumboteca.service.location.LocationServicesImpl;
+import co.com.udem.rumboteca.service.location.site.SiteInterface;
+import co.com.udem.rumboteca.service.location.site.SiteServiceImpl;
 
 public class RumbotecaFacade {
 
 	EventInterface eventInterface = new EventServicesImpl();
 	LocationInterface locationInterface = new LocationServicesImpl();
+	SiteInterface siteInterface = new SiteServiceImpl();
 
 	public List<PlaceDTO> getLocationByCity(int idCity) {
 		return locationInterface.getLocationByCity(idCity);
@@ -64,5 +74,25 @@ public class RumbotecaFacade {
 	}
 
 	public void getReviewTopTen() {
+	}
+	
+	public List<CityDTO> getCities() {
+		return siteInterface.getCities();
+	}
+
+	public List<CityDTO> getCitiesById(int idCity) {
+		return siteInterface.getCitiesById(idCity);
+	}
+
+	public List<StateDTO> getStates() {
+		return siteInterface.getStates();
+	}
+
+	public List<StateDTO> getStatesById(int idState) {
+		return siteInterface.getStatesById(idState);
+	}
+
+	public List<CountryDTO> getCountries() {
+		return siteInterface.getCountries();
 	}
 }

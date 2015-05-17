@@ -1,12 +1,7 @@
 package co.com.udem.rumboteca.service.pageservice;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import co.com.udem.rumboteca.model.AdvertisementDTO;
 import co.com.udem.rumboteca.model.EventDTO;

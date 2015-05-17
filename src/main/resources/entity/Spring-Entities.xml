@@ -10,4 +10,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="locationDAO" class="co.com.udem.rumboteca.persistence.dao.impl.LocationDAOImpl">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<bean id="siteDAO" class="co.com.udem.rumboteca.persistence.dao.impl.SIteDAOImpl">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 </beans>
