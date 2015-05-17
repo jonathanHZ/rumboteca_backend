@@ -3,12 +3,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean id="advertisementDAO" class="co.com.rumboteca.persistence.advertisement.jdbc.dao.impl.AdvertisementDAOImpl">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
-	<bean id="eventDAO" class="co.com.rumboteca.persistence.dao.impl.EventDAOImpl">
+	<bean id="eventDAO" class="co.com.udem.rumboteca.persistence.dao.impl.EventDAOImpl">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
+	<bean id="locationDAO" class="co.com.udem.rumboteca.persistence.dao.impl.LocationDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>

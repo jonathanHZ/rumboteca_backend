@@ -8,8 +8,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import co.com.rumboteca.persistence.advertisement.jdbc.dao.AdvertisementDAO;
-import co.com.rumboteca.persistence.advertisement.jdbc.entity.Advertisement;
+import co.com.udem.rumboteca.persistence.advertisement.jdbc.dao.AdvertisementDAO;
+import co.com.udem.rumboteca.persistence.advertisement.jdbc.entity.Advertisement;
 
 
 public class AdvertisementDAOImplTest {

@@ -8,7 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import co.com.rumboteca.model.EventDTO;
+import co.com.udem.rumboteca.model.EventDTO;
+import co.com.udem.rumboteca.service.event.EventInterface;
+import co.com.udem.rumboteca.service.event.EventServicesImpl;
 
 /**
  * Event services test
@@ -34,7 +36,7 @@ public class EventServicesImplTest {
 
   @Test
   public void testGetEventByCity() {
-    int idCity = 2;
+    int idCity = 1;
     EventInterface eventInterface = new EventServicesImpl();
     List<EventDTO> eventList = eventInterface.getEventByCity(idCity);
     for (EventDTO eventDTO : eventList) {
