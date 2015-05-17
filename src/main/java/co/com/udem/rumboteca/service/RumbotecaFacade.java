@@ -9,7 +9,6 @@ import co.com.udem.rumboteca.service.event.EventServicesImpl;
 import co.com.udem.rumboteca.service.location.LocationInterface;
 import co.com.udem.rumboteca.service.location.LocationServicesImpl;
 
-
 public class RumbotecaFacade {
 
 	EventInterface eventInterface = new EventServicesImpl();
