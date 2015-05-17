@@ -33,6 +33,6 @@ public interface LocationInterface {
   public List<PlaceDTO> getLocationByCountry(int idCountry);
 
   
-  public void getLocationTopTen();
+  public List<PlaceDTO> getLocationTopTen();
 
 }

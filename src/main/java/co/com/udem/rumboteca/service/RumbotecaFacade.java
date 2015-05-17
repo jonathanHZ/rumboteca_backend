@@ -12,9 +12,9 @@ import co.com.udem.rumboteca.service.location.LocationServicesImpl;
 public class RumbotecaFacade {
 
 	EventInterface eventInterface = new EventServicesImpl();
+	LocationInterface locationInterface = new LocationServicesImpl();
 
 	public List<PlaceDTO> getLocationByCity(int idCity) {
-		LocationInterface locationInterface = new LocationServicesImpl();
 		return locationInterface.getLocationByCity(idCity);
 	}
 
@@ -27,7 +27,8 @@ public class RumbotecaFacade {
 	public void getLocation(String log, String lat) {
 	}
 
-	public void getLocationTopTen() {
+	public List<PlaceDTO> getLocationTopTen() {
+		return locationInterface.getLocationTopTen();
 	}
 
 	public List<EventDTO> getEventByCity(int idCity) {

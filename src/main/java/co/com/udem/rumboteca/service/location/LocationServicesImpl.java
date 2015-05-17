@@ -16,65 +16,78 @@ import co.com.udem.rumboteca.persistence.entity.Place;
  *
  */
 public class LocationServicesImpl implements LocationInterface {
-	
-	 // Get DAO implementation use spring injection 
-    ApplicationContext context = new ClassPathXmlApplicationContext("Spring-Module.xml");
+
+	// Get DAO implementation use spring injection
+	ApplicationContext context = new ClassPathXmlApplicationContext(
+			"Spring-Module.xml");
+	LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
 
 	public List<PlaceDTO> getLocationByCity(int idCity) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
-	    LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
-	    List<Place> places = locationDAO.getLocationByCity(1);
-	    
-	    for (Place place : places) {
+
+		List<Place> places = locationDAO.getLocationByCity(1);
+
+		for (Place place : places) {
 			PlaceDTO placeDTO = new PlaceDTO();
 			placeDTO.setTittle(place.getTittle());
 			placeDTO.setPhoto(place.getPhoto());
 			placeDTO.setDescription(place.getDescription());
-			
+
 			placeDTOList.add(placeDTO);
 		}
-	    
-	    return placeDTOList;
+
+		return placeDTOList;
 	}
 
 	public List<PlaceDTO> getLocationByState(int idState) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
-	    LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
-	    List<Place> places = locationDAO.getLocationByState(1);
-	    
-	    for (Place place : places) {
+		List<Place> places = locationDAO.getLocationByState(1);
+
+		for (Place place : places) {
 			PlaceDTO placeDTO = new PlaceDTO();
 			placeDTO.setTittle(place.getTittle());
 			placeDTO.setPhoto(place.getPhoto());
 			placeDTO.setDescription(place.getDescription());
-			
+
 			placeDTOList.add(placeDTO);
 		}
-	    
-	    return placeDTOList;
+
+		return placeDTOList;
 	}
 
 	public List<PlaceDTO> getLocationByCountry(int idCountry) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
-	    LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
-	    List<Place> places = locationDAO.getLocationByCountry(1);
-	    
-	    for (Place place : places) {
+		List<Place> places = locationDAO.getLocationByCountry(1);
+
+		for (Place place : places) {
 			PlaceDTO placeDTO = new PlaceDTO();
 			placeDTO.setId(place.getId());
 			placeDTO.setTittle(place.getTittle());
 			placeDTO.setPhoto(place.getPhoto());
 			placeDTO.setDescription(place.getDescription());
-			
+
 			placeDTOList.add(placeDTO);
 		}
-	    
-	    return placeDTOList;
+
+		return placeDTOList;
 	}
 
-	public void getLocationTopTen() {
-		// TODO Auto-generated method stub
-		
+	public List<PlaceDTO> getLocationTopTen() {
+		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
+		List<Place> places = locationDAO.getLocationTopTen();
+
+		for (Place place : places) {
+			PlaceDTO placeDTO = new PlaceDTO();
+			placeDTO.setId(place.getId());
+			placeDTO.setTittle(place.getTittle());
+			placeDTO.setPhoto(place.getPhoto());
+			placeDTO.setDescription(place.getDescription());
+
+			placeDTOList.add(placeDTO);
+		}
+
+		return placeDTOList;
+
 	}
-  
+
 }
