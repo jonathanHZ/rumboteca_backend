@@ -1,6 +1,5 @@
 package co.com.udem.rumboteca.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import co.com.udem.rumboteca.model.CityDTO;
@@ -9,9 +8,6 @@ import co.com.udem.rumboteca.model.CountryDTO;
 import co.com.udem.rumboteca.model.EventDTO;
 import co.com.udem.rumboteca.model.PlaceDTO;
 import co.com.udem.rumboteca.model.StateDTO;
-import co.com.udem.rumboteca.persistence.entity.City;
-import co.com.udem.rumboteca.persistence.entity.Country;
-import co.com.udem.rumboteca.persistence.entity.States;
 import co.com.udem.rumboteca.service.combo.ComboInterface;
 import co.com.udem.rumboteca.service.combo.ComboServicesImpl;
 import co.com.udem.rumboteca.service.event.EventInterface;
