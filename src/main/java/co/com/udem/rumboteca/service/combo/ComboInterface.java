@@ -1,5 +1,11 @@
 package co.com.udem.rumboteca.service.combo;
 
+import java.util.List;
+
+import co.com.udem.rumboteca.model.ComboDTO;
+import co.com.udem.rumboteca.persistence.entity.Combo;
+import co.com.udem.rumboteca.persistence.entity.Product;
+
 /**
  * 
  * @author Milton
@@ -7,25 +13,8 @@ package co.com.udem.rumboteca.service.combo;
  */
 public interface ComboInterface {
 
-  /**
-   * 
-   * @param idCountry
-   * @param idState
-   * @param idCity
-   */
-  public void getLiquorComboByLocation(String idCountry, String idState, String idCity);
+	public List<ComboDTO> getCombos();
 
-  /**
-   * 
-   * @param idCountry
-   * @param idState
-   * @param idCity
-   */
-  public void getFoodByComboLocation(String idCountry, String idState, String idCity);
-
-  /**
-   * 
-   */
-  public void getComboTopTen();
+	public List<ComboDTO> getComboTopTen();
 
 }

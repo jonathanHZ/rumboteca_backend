@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.com.udem.rumboteca.model.CityDTO;
+import co.com.udem.rumboteca.model.ComboDTO;
 import co.com.udem.rumboteca.model.CountryDTO;
 import co.com.udem.rumboteca.model.EventDTO;
 import co.com.udem.rumboteca.model.PlaceDTO;
@@ -11,6 +12,8 @@ import co.com.udem.rumboteca.model.StateDTO;
 import co.com.udem.rumboteca.persistence.entity.City;
 import co.com.udem.rumboteca.persistence.entity.Country;
 import co.com.udem.rumboteca.persistence.entity.States;
+import co.com.udem.rumboteca.service.combo.ComboInterface;
+import co.com.udem.rumboteca.service.combo.ComboServicesImpl;
 import co.com.udem.rumboteca.service.event.EventInterface;
 import co.com.udem.rumboteca.service.event.EventServicesImpl;
 import co.com.udem.rumboteca.service.location.LocationInterface;
@@ -23,6 +26,7 @@ public class RumbotecaFacade {
 	EventInterface eventInterface = new EventServicesImpl();
 	LocationInterface locationInterface = new LocationServicesImpl();
 	SiteInterface siteInterface = new SiteServiceImpl();
+	ComboInterface comboInterface = new ComboServicesImpl();
 
 	public List<PlaceDTO> getLocationByCity(int idCity) {
 		return locationInterface.getLocationByCity(idCity);
@@ -58,12 +62,8 @@ public class RumbotecaFacade {
 	public void getEventByLocation(String log, String lat) {
 	}
 
-	public void getLiquordComboByLocation(String idCountry, String idState,
-			String idCity) {
-	}
-
-	public void getFoodByComboLocation(String idCountry, String idState,
-			String idCity) {
+	public List<ComboDTO> getCombos (){
+		return comboInterface.getCombos();
 	}
 
 	public void getComboTopTen() {

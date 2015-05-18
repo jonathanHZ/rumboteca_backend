@@ -14,4 +14,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="siteDAO" class="co.com.udem.rumboteca.persistence.dao.impl.SIteDAOImpl">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
+	<bean id="comboDAO" class="co.com.udem.rumboteca.persistence.dao.impl.ComboDAOImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 </beans>

@@ -1,8 +1,12 @@
-package co.com.udem.rumboteca.persistence.entity;
+package co.com.udem.rumboteca.model;
 
+import java.io.Serializable;
+import java.util.List;
 
-public class Combo {
+public class ComboDTO implements Serializable{
 
+	private static final long serialVersionUID = -7814817158967887485L;
+	
 	/** Identifier */
 	private int id;
 
@@ -16,6 +20,8 @@ public class Combo {
 	private int placeId;
 
 	private String type;
+	
+	private List<ProductDTO>productDTOList;
 
 	public int getId() {
 		return id;
@@ -57,4 +63,12 @@ public class Combo {
 		this.type = type;
 	}
 
+	public List<ProductDTO> getProductDTOList() {
+		return productDTOList;
+	}
+
+	public void setProductDTOList(List<ProductDTO> productDTOList) {
+		this.productDTOList = productDTOList;
+	}
+	
 }

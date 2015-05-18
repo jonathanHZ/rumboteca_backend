@@ -1,8 +1,7 @@
-package co.com.udem.rumboteca.persistence.entity;
+package co.com.udem.rumboteca.model;
 
-
-public class Product {
-
+public class ProductDTO {
+	
 	/** Product type: F-food, L-Liquor */
 	private String productType;
 
@@ -68,5 +67,6 @@ public class Product {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	
 }

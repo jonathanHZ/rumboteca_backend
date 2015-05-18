@@ -78,7 +78,7 @@ public class SiteServiceImpl implements SiteInterface {
 		List<Country> countries = siteDAO.getCountries();
 		for (Country country : countries) {
 			CountryDTO countryDTO = new CountryDTO();
-			countryDTO.setId(countryDTO.getId());
+			countryDTO.setId(country.getId());
 			countryDTO.setName(country.getName());
 			countryDTOs.add(countryDTO);
 		}
