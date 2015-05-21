@@ -22,6 +22,7 @@ public class LocationServicesImpl implements LocationInterface {
 			"Spring-Module.xml");
 	LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
 
+	@Override
 	public List<PlaceDTO> getLocationByCity(int idCity) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
 
@@ -39,6 +40,7 @@ public class LocationServicesImpl implements LocationInterface {
 		return placeDTOList;
 	}
 
+	@Override
 	public List<PlaceDTO> getLocationByState(int idState) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
 		List<Place> places = locationDAO.getLocationByState(1);
@@ -55,6 +57,7 @@ public class LocationServicesImpl implements LocationInterface {
 		return placeDTOList;
 	}
 
+	@Override
 	public List<PlaceDTO> getLocationByCountry(int idCountry) {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
 		List<Place> places = locationDAO.getLocationByCountry(1);
@@ -72,6 +75,7 @@ public class LocationServicesImpl implements LocationInterface {
 		return placeDTOList;
 	}
 
+	@Override
 	public List<PlaceDTO> getLocationTopTen() {
 		List<PlaceDTO> placeDTOList = new ArrayList<PlaceDTO>();
 		List<Place> places = locationDAO.getLocationTopTen();

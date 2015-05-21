@@ -20,6 +20,7 @@ public class SiteServiceImpl implements SiteInterface {
 			"Spring-Module.xml");
 	SiteDAO siteDAO = (SiteDAO) context.getBean("siteDAO");
 
+	@Override
 	public List<CityDTO> getCities() {
 		List<CityDTO> cityDTOs = new ArrayList<CityDTO>();
 		List<City> cities = siteDAO.getCities();
@@ -33,6 +34,7 @@ public class SiteServiceImpl implements SiteInterface {
 		return cityDTOs;
 	}
 
+	@Override
 	public List<CityDTO> getCitiesById(int idCity) {
 		List<CityDTO> cityDTOs = new ArrayList<CityDTO>();
 		List<City> cities = siteDAO.getCitiesById(idCity);
@@ -46,6 +48,7 @@ public class SiteServiceImpl implements SiteInterface {
 		return cityDTOs;
 	}
 
+	@Override
 	public List<StateDTO> getStates() {
 		List<StateDTO> stateDTOs = new ArrayList<StateDTO>();
 		List<States> statesList = siteDAO.getStates();
@@ -59,6 +62,7 @@ public class SiteServiceImpl implements SiteInterface {
 		return stateDTOs;
 	}
 
+	@Override
 	public List<StateDTO> getStatesById(int idState) {
 		List<StateDTO> stateDTOs = new ArrayList<StateDTO>();
 		List<States> statesList = siteDAO.getStatesById(idState);
@@ -72,6 +76,7 @@ public class SiteServiceImpl implements SiteInterface {
 		return stateDTOs;
 	}
 
+	@Override
 	public List<CountryDTO> getCountries() {
 		List<CountryDTO> countryDTOs = new ArrayList<CountryDTO>();
 		List<Country> countries = siteDAO.getCountries();

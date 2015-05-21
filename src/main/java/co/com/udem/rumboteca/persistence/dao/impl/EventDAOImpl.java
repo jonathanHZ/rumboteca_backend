@@ -23,6 +23,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
+	@Override
 	public List<Event> getEventByCity(int idCity) {
 		// SQL Query
 		String sql = "SELECT  e.id, e.contactId, p.id as placeId, e.tittle, e.description, e.photo "
@@ -73,6 +74,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 		return eventList;
 	}
 
+	@Override
 	public List<Event> getEventByState(int idState) {
 		// SQL Query
 		String sql = "SELECT  e.id, e.contactId, p.id as placeId, e.tittle, e.description, e.photo "
@@ -123,6 +125,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 		return eventList;
 	}
 
+	@Override
 	public List<Event> getEventByCountry(int idCountry) {
 		// SQL Query
 		String sql = "SELECT  e.id, e.contactId, p.id as placeId, e.tittle, e.description, e.photo "
@@ -175,6 +178,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 
 	}
 
+	@Override
 	public List<Event> getEventTopTen() {
 		// SQL Query
 		String sql = "SELECT distinctrow ev.id, ev.contactId, ev.placeId, ev.tittle, ev.description, ev.photo,"
@@ -220,6 +224,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 
 	}
 
+	@Override
 	public List<EventDTO> getEventByLocation(String log, String lat) {
 		return null;
 	}

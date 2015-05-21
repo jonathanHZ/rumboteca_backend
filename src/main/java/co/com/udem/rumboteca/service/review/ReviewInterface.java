@@ -1,5 +1,9 @@
 package co.com.udem.rumboteca.service.review;
 
+import java.util.List;
+
+import co.com.udem.rumboteca.model.ReviewDTO;
+
 /**
  * 
  * @author Milton
@@ -8,16 +12,14 @@ package co.com.udem.rumboteca.service.review;
 public interface ReviewInterface {
 
   /**
-   * 
-   * @param idCountry
-   * @param idState
+   
    * @param idCity
    */
-  public void getReviewByLocation(String idCountry, String idState, String idCity);
+  public List<ReviewDTO> getReviewByLocation(int idCity);
 
   /**
    * 
    */
-  public void getReviewTopTen();
+  public List<ReviewDTO> getReviewTopTen();
   
 } 

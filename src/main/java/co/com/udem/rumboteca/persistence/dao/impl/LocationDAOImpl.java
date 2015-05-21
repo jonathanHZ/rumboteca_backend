@@ -18,6 +18,7 @@ public class LocationDAOImpl extends DataSourceDefinition implements
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
+	@Override
 	public List<Place> getLocationByCity(int idCity) {
 
 		String sql = "SELECT * FROM place WHERE cityId = ?";
@@ -66,6 +67,7 @@ public class LocationDAOImpl extends DataSourceDefinition implements
 
 	}
 
+	@Override
 	public List<Place> getLocationByState(int idState) {
 
 		String sql = "SELECT pl.id, pl.tittle, pl.description, pl.photo FROM place pl JOIN city ci ON pl.cityId = ci.id WHERE ci.stateId = ?";
@@ -113,6 +115,7 @@ public class LocationDAOImpl extends DataSourceDefinition implements
 		return placeList;
 	}
 
+	@Override
 	public List<Place> getLocationByCountry(int idCountry) {
 		String sql = "SELECT pl.id, pl.tittle, pl.description, pl.photo "
 				+ "FROM place pl JOIN city ci ON pl.cityId = ci.id JOIN state st ON ci.stateId = st.id WHERE st.countryId = ?";
@@ -153,6 +156,7 @@ public class LocationDAOImpl extends DataSourceDefinition implements
 		return placeList;
 	}
 
+	@Override
 	public List<Place> getLocationTopTen() {
 		String sql = "SELECT distinctrow plc.id, plc.tittle, plc.description, plc.photo,"
 				+ "(SELECT count(co.id) FROM comment co JOIN review re ON co.reviewId = re.id JOIN placereview plr ON re.id = plr.reviewId "

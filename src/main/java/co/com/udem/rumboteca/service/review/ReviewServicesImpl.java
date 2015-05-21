@@ -1,5 +1,9 @@
 package co.com.udem.rumboteca.service.review;
 
+import java.util.List;
+
+import co.com.udem.rumboteca.model.ReviewDTO;
+
 /**
  * 
  * @author Milton
@@ -7,14 +11,15 @@ package co.com.udem.rumboteca.service.review;
  */
 public class ReviewServicesImpl implements ReviewInterface {
 
-  public void getReviewByLocation(String idCountry, String idState, String idCity) {
-    // TODO Auto-generated method stub
-    
-  }
+	@Override
+	public List<ReviewDTO> getReviewByLocation(int idCity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-  public void getReviewTopTen() {
-    // TODO Auto-generated method stub
-    
-  }
-
+	@Override
+	public List<ReviewDTO> getReviewTopTen() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

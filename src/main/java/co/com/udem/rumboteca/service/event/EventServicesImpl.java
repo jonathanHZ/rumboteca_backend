@@ -22,6 +22,7 @@ public class EventServicesImpl implements EventInterface {
 			"Spring-Module.xml");
 	EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
 
+	@Override
 	public List<EventDTO> getEventByCity(int idCity) {
 
 		List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
@@ -39,6 +40,7 @@ public class EventServicesImpl implements EventInterface {
 		return eventDTOList;
 	}
 
+	@Override
 	public List<EventDTO> getEventByState(int idState) {
 
 		List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
@@ -56,6 +58,7 @@ public class EventServicesImpl implements EventInterface {
 		return eventDTOList;
 	}
 
+	@Override
 	public List<EventDTO> getEventByCountry(int idCountry) {
 
 		List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
@@ -73,6 +76,7 @@ public class EventServicesImpl implements EventInterface {
 		return eventDTOList;
 	}
 
+	@Override
 	public List<EventDTO> getEventTopTen() {
 
 		List<EventDTO> eventDTOList = new ArrayList<EventDTO>();
@@ -90,6 +94,7 @@ public class EventServicesImpl implements EventInterface {
 		return eventDTOList;
 	}
 
+	@Override
 	public List<EventDTO> getEventByLocation(String log, String lat) {
 		return null;
 	}

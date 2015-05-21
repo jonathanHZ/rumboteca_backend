@@ -19,6 +19,7 @@ public class ComboServicesImpl implements ComboInterface {
 			"Spring-Module.xml");
 	ComboDAO comboDAO = (ComboDAO) context.getBean("comboDAO");
 	
+	@Override
 	public List<ComboDTO> getCombos() {
 		List<ComboDTO> comboDTOs = new ArrayList<ComboDTO>();
 		List<Combo> combos = comboDAO.getCombo();
@@ -47,6 +48,7 @@ public class ComboServicesImpl implements ComboInterface {
 		}
 		return comboDTOs;
 	}
+	@Override
 	public List<ComboDTO> getComboTopTen() {
 		// TODO Auto-generated method stub
 		return null;

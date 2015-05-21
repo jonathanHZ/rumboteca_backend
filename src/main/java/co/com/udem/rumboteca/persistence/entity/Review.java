@@ -18,11 +18,7 @@ public class Review {
   /** Identifier */
   private int id;
 
-  /** Place identifier */
-  private int placeId;
 
-  /** Event identifier */
-  private int eventId;
 
   /**
    * @return the photo
@@ -80,31 +76,4 @@ public class Review {
     this.id = id;
   }
 
-  /**
-   * @return the placeId
-   */
-  public int getPlaceId() {
-    return placeId;
-  }
-
-  /**
-   * @param placeId the placeId to set
-   */
-  public void setPlaceId(int placeId) {
-    this.placeId = placeId;
-  }
-
-  /**
-   * @return the eventId
-   */
-  public int getEventId() {
-    return eventId;
-  }
-
-  /**
-   * @param eventId the eventId to set
-   */
-  public void setEventId(int eventId) {
-    this.eventId = eventId;
-  }
-}
+ }

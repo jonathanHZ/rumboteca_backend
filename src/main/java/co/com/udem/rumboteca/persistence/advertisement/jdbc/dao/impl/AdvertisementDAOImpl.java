@@ -22,7 +22,8 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
     this.dataSource = dataSource;
   }
   
-  public void insert(Advertisement advertisement) {
+  @Override
+public void insert(Advertisement advertisement) {
     
 //    String sql = "INSERT INTO CUSTOMER " +
 //        "(CUST_ID, NAME, AGE) VALUES (?, ?, ?)";
@@ -51,7 +52,8 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
     
   }
 
-  public Advertisement findByAdvertisementId(int custId) {
+  @Override
+public Advertisement findByAdvertisementId(int custId) {
 
     
     String sql = "SELECT * FROM CUSTOMER WHERE CUST_ID = ?";

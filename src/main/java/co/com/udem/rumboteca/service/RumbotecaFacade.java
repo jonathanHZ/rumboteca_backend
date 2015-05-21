@@ -28,10 +28,12 @@ public class RumbotecaFacade {
 		return locationInterface.getLocationByCity(idCity);
 	}
 
-	public void getLocationByState(String idCountry, String idState) {
+	public List<PlaceDTO> getLocationByState(int idState) {
+		return locationInterface.getLocationByState(idState);
 	}
 
-	public void getLocationByCountry(String idCountry) {
+	public List<PlaceDTO> getLocationByCountry(int idCountry) {
+		return locationInterface.getLocationByCountry(idCountry);
 	}
 
 	public void getLocation(String log, String lat) {
@@ -45,10 +47,12 @@ public class RumbotecaFacade {
 		return eventInterface.getEventByCity(idCity);
 	}
 
-	public void getEventByState(String idCountry, String idState) {
+	public List<EventDTO> getEventByState(int idState) {
+		return eventInterface.getEventByState(idState);
 	}
 
-	public void getEventByCountry(String idCountry) {
+	public List<EventDTO> getEventByCountry(int idCountry) {
+		return eventInterface.getEventByCountry(idCountry);
 	}
 
 	public List<EventDTO> getEventTopTen() {
@@ -65,8 +69,7 @@ public class RumbotecaFacade {
 	public void getComboTopTen() {
 	}
 
-	public void getReviewByLocation(String idCountry, String idState,
-			String idCity) {
+	public void getReviewByLocation(int city) {
 	}
 
 	public void getReviewTopTen() {

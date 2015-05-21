@@ -19,6 +19,7 @@ public class SIteDAOImpl extends DataSourceDefinition implements SiteDAO {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
+	@Override
 	public List<City> getCities() {
 		String sql = "SELECT * FROM city";
 		List<City> cities = new ArrayList<City>();
@@ -59,6 +60,7 @@ public class SIteDAOImpl extends DataSourceDefinition implements SiteDAO {
 		return cities;
 	}
 
+	@Override
 	public List<City> getCitiesById(int idCity) {
 		String sql = "SELECT * FROM city WHERE ID = ?";
 		List<City> cities = new ArrayList<City>();
@@ -97,6 +99,7 @@ public class SIteDAOImpl extends DataSourceDefinition implements SiteDAO {
 		return cities;
 	}
 
+	@Override
 	public List<States> getStates() {
 		String sql = "SELECT * FROM state";
 		List<States> states = new ArrayList<States>();
@@ -134,6 +137,7 @@ public class SIteDAOImpl extends DataSourceDefinition implements SiteDAO {
 		return states;
 	}
 
+	@Override
 	public List<States> getStatesById(int idState) {
 		String sql = "SELECT * FROM state WHERE id = ?";
 		List<States> states = new ArrayList<States>();
@@ -172,6 +176,7 @@ public class SIteDAOImpl extends DataSourceDefinition implements SiteDAO {
 		return states;
 	}
 
+	@Override
 	public List<Country> getCountries() {
 		List<Country> countries = new ArrayList<Country>();
 		String sql = "SELECT * FROM country";
