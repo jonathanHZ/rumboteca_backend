@@ -48,6 +48,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 				Event event = new Event();
 				event.setId(rs.getInt("id"));
 				event.setContactId(rs.getInt("contactId"));
+				event.setPlaceId(rs.getInt("placeId"));
 				event.setDescription(rs.getString("description"));
 				event.setPhoto(rs.getString("photo"));
 				event.setTittle(rs.getString("tittle"));
@@ -99,6 +100,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 				Event event = new Event();
 				event.setId(rs.getInt("id"));
 				event.setContactId(rs.getInt("contactId"));
+				event.setPlaceId(rs.getInt("placeId"));
 				event.setDescription(rs.getString("description"));
 				event.setPhoto(rs.getString("photo"));
 				event.setTittle(rs.getString("tittle"));
@@ -151,6 +153,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 				Event event = new Event();
 				event.setId(rs.getInt("id"));
 				event.setContactId(rs.getInt("contactId"));
+				event.setPlaceId(rs.getInt("placeId"));
 				event.setDescription(rs.getString("description"));
 				event.setPhoto(rs.getString("photo"));
 				event.setTittle(rs.getString("tittle"));
@@ -181,7 +184,7 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 	@Override
 	public List<Event> getEventTopTen() {
 		// SQL Query
-		String sql = "SELECT distinctrow ev.id, ev.contactId, ev.placeId, ev.tittle, ev.description, ev.photo,"
+		String sql = "SELECT distinctrow ev.id, ev.contactId, ev.placeId, ev.tittle, ev.description, ev.completDescription, ev.photo, ev.fecha,"
 				+ "(SELECT count(co.id) FROM comment co Join review re ON co.reviewId = re.id Join eventreview er on re.id = er.reviewId "
 				+ "where er.eventId = ev.id) As comments FROM event ev JOIN eventreview er ON ev.id = er.eventId "
 				+ "JOIN review re ON er.reviewId = re.id JOIN comment co ON re.id = co.reviewId ORDER BY comments desc LIMIT 5";
@@ -197,10 +200,12 @@ public class EventDAOImpl extends DataSourceDefinition implements EventDAO {
 				Event event = new Event();
 				event.setId(rs.getInt("id"));
 				event.setContactId(rs.getInt("contactId"));
+				event.setPlaceId(rs.getInt("placeId"));
 				event.setDescription(rs.getString("description"));
+				event.setCompletDescription(rs.getString("completDescription"));
 				event.setPhoto(rs.getString("photo"));
 				event.setTittle(rs.getString("tittle"));
-
+				event.setFecha(rs.getString("fecha"));
 				eventList.add(event);
 			}
 

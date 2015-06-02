@@ -86,7 +86,9 @@ public class LocationServicesImpl implements LocationInterface {
 			placeDTO.setTittle(place.getTittle());
 			placeDTO.setPhoto(place.getPhoto());
 			placeDTO.setDescription(place.getDescription());
-
+			placeDTO.setCompletDescription(place.getCompletDescription());
+			placeDTO.setDirection(place.getDirection());
+			placeDTO.setContact(locationDAO.getContactById(place.getContactId()));
 			placeDTOList.add(placeDTO);
 		}
 

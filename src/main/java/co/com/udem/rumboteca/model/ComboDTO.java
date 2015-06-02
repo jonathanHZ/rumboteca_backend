@@ -3,10 +3,10 @@ package co.com.udem.rumboteca.model;
 import java.io.Serializable;
 import java.util.List;
 
-public class ComboDTO implements Serializable{
+public class ComboDTO implements Serializable {
 
 	private static final long serialVersionUID = -7814817158967887485L;
-	
+
 	/** Identifier */
 	private int id;
 
@@ -20,8 +20,28 @@ public class ComboDTO implements Serializable{
 	private int placeId;
 
 	private String type;
-	
-	private List<ProductDTO>productDTOList;
+
+	private List<ProductDTO> productDTOList;
+
+	private String photo;
+
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 	public int getId() {
 		return id;
@@ -70,5 +90,5 @@ public class ComboDTO implements Serializable{
 	public void setProductDTOList(List<ProductDTO> productDTOList) {
 		this.productDTOList = productDTOList;
 	}
-	
+
 }

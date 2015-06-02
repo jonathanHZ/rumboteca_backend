@@ -30,6 +30,9 @@ public class ComboServicesImpl implements ComboInterface {
 			comboDTO.setPlaceId(combo.getPlaceId());
 			comboDTO.setName(combo.getName());
 			comboDTO.setPrice(combo.getPrice());
+			comboDTO.setType(combo.getType());
+			comboDTO.setPhoto(combo.getPhoto());
+			comboDTO.setDescription(combo.getDescription());
 			
 			List<ProductDTO> productDTOs = new ArrayList<ProductDTO>();
 			List<Product> products = comboDAO.getProductsByComboId(comboDTO.getId());

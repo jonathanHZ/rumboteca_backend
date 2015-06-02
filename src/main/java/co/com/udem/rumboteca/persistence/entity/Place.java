@@ -2,126 +2,154 @@ package co.com.udem.rumboteca.persistence.entity;
 
 /**
  * This class manage place's persistence
+ * 
  * @author Milton
  */
 public class Place {
 
-  /** Identifier */
-  private int id;
+	/** Identifier */
+	private int id;
 
-  /** Photo's path */
-  private String photo;
+	/** Photo's path */
+	private String photo;
 
-  /** Title to show */
-  private String tittle;
+	/** Title to show */
+	private String tittle;
 
-  /** Description to show */
-  private String description;
+	/** Description to show */
+	private String description;
 
-  /** City identifier */
-  private int cityId;
+	/** City identifier */
+	private int cityId;
 
-  /** Contact identifier */
-  private int contactId;
-  
-  /** Location identifier */
-  private int locationId;
+	/** Contact identifier */
+	private int contactId;
 
-  /**
-   * @return the id
-   */
-  public int getId() {
-    return id;
-  }
+	/** Location identifier */
+	private int locationId;
 
-  /**
-   * @param id the id to set
-   */
-  public void setId(int id) {
-    this.id = id;
-  }
+	private String completDescription;
 
-  /**
-   * @return the photo
-   */
-  public String getPhoto() {
-    return photo;
-  }
+	private String direction;
 
-  /**
-   * @param photo the photo to set
-   */
-  public void setPhoto(String photo) {
-    this.photo = photo;
-  }
+	public String getDirection() {
+		return direction;
+	}
 
-  /**
-   * @return the tittle
-   */
-  public String getTittle() {
-    return tittle;
-  }
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
 
-  /**
-   * @param tittle the tittle to set
-   */
-  public void setTittle(String tittle) {
-    this.tittle = tittle;
-  }
+	public String getCompletDescription() {
+		return completDescription;
+	}
 
-  /**
-   * @return the description
-   */
-  public String getDescription() {
-    return description;
-  }
+	public void setCompletDescription(String completDescription) {
+		this.completDescription = completDescription;
+	}
 
-  /**
-   * @param description the description to set
-   */
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
 
-  /**
-   * @return the cityId
-   */
-  public int getCityId() {
-    return cityId;
-  }
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
-  /**
-   * @param cityId the cityId to set
-   */
-  public void setCityId(int cityId) {
-    this.cityId = cityId;
-  }
+	/**
+	 * @return the photo
+	 */
+	public String getPhoto() {
+		return photo;
+	}
 
-  /**
-   * @return the contactId
-   */
-  public int getContactId() {
-    return contactId;
-  }
+	/**
+	 * @param photo
+	 *            the photo to set
+	 */
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
-  /**
-   * @param contactId the contactId to set
-   */
-  public void setContactId(int contactId) {
-    this.contactId = contactId;
-  }
+	/**
+	 * @return the tittle
+	 */
+	public String getTittle() {
+		return tittle;
+	}
 
-  /**
-   * @return the locationId
-   */
-  public int getLocationId() {
-    return locationId;
-  }
+	/**
+	 * @param tittle
+	 *            the tittle to set
+	 */
+	public void setTittle(String tittle) {
+		this.tittle = tittle;
+	}
 
-  /**
-   * @param locationId the locationId to set
-   */
-  public void setLocationId(int locationId) {
-    this.locationId = locationId;
-  }
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description
+	 *            the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * @return the cityId
+	 */
+	public int getCityId() {
+		return cityId;
+	}
+
+	/**
+	 * @param cityId
+	 *            the cityId to set
+	 */
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+
+	/**
+	 * @return the contactId
+	 */
+	public int getContactId() {
+		return contactId;
+	}
+
+	/**
+	 * @param contactId
+	 *            the contactId to set
+	 */
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
+
+	/**
+	 * @return the locationId
+	 */
+	public int getLocationId() {
+		return locationId;
+	}
+
+	/**
+	 * @param locationId
+	 *            the locationId to set
+	 */
+	public void setLocationId(int locationId) {
+		this.locationId = locationId;
+	}
 }

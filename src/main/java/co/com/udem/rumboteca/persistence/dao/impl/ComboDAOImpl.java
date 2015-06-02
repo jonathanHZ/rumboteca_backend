@@ -40,6 +40,9 @@ public class ComboDAOImpl extends DataSourceDefinition implements ComboDAO {
 				combo.setName(rs.getString("name"));
 				combo.setPrice(rs.getInt("price"));
 				combo.setType(rs.getString("type"));
+				combo.setPhoto(rs.getString("photo"));
+				combo.setDescription(rs.getString("description"));
+				System.out.println(rs.getString("type"));
 				combos.add(combo);
 			}
 

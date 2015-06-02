@@ -8,7 +8,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import co.com.udem.rumboteca.model.EventDTO;
 import co.com.udem.rumboteca.persistence.dao.EventDAO;
+import co.com.udem.rumboteca.persistence.dao.LocationDAO;
 import co.com.udem.rumboteca.persistence.entity.Event;
+import co.com.udem.rumboteca.persistence.entity.Place;
 
 /**
  * Event services implementation
@@ -21,6 +23,7 @@ public class EventServicesImpl implements EventInterface {
 	ApplicationContext context = new ClassPathXmlApplicationContext(
 			"Spring-Module.xml");
 	EventDAO eventDAO = (EventDAO) context.getBean("eventDAO");
+	LocationDAO locationDAO = (LocationDAO) context.getBean("locationDAO");
 
 	@Override
 	public List<EventDTO> getEventByCity(int idCity) {
@@ -86,8 +89,13 @@ public class EventServicesImpl implements EventInterface {
 			EventDTO eventDTO = new EventDTO();
 			eventDTO.setId("" + event.getId());
 			eventDTO.setDescription(event.getDescription());
+			eventDTO.setCompletDescription(event.getCompletDescription());
 			eventDTO.setPhoto(event.getPhoto());
 			eventDTO.setTittle(event.getTittle());
+			eventDTO.setFecha(event.getFecha());;
+			System.out.println(event.getPlaceId());
+			Place place = locationDAO.getLocationById(event.getPlaceId());
+			eventDTO.setPlaceTittle(place.getTittle());
 			eventDTOList.add(eventDTO);
 		}
 

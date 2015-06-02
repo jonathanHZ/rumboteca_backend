@@ -1,6 +1,5 @@
 package co.com.udem.rumboteca.persistence.entity;
 
-
 public class Combo {
 
 	/** Identifier */
@@ -16,6 +15,26 @@ public class Combo {
 	private int placeId;
 
 	private String type;
+
+	private String photo;
+
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 	public int getId() {
 		return id;
